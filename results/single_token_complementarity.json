@@ -36,6 +36,8 @@
   },
   "source": {
     "single_token_dataset_doi": "10.5281/zenodo.21278557",
+    "single_token_matrix_member": "results/divergence-matrix.csv",
+    "single_token_matrix_sha256": null,
     "ikp_fingerprint_results": "results/comprehensive_fingerprint_results.json",
     "alignment": "exact served model identifier; non-thinking IKP runs only"
   }

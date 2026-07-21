@@ -13,6 +13,7 @@ The external dataset is read in place and is not copied into this repository.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import io
 import json
 import sys
@@ -52,13 +53,15 @@ def load_model_ids(results_dir: Path) -> dict[str, str]:
 
 
 def load_external_distances(path: Path):
+    """Return (distances, sha256) so the exact source matrix can be pinned."""
     if path.suffix.lower() == ".zip":
         with zipfile.ZipFile(path) as archive:
-            with archive.open(DISTANCE_MEMBER) as raw:
-                with io.TextIOWrapper(raw, encoding="utf-8") as source:
-                    return read_distance_matrix(source)
-    with path.open(encoding="utf-8", newline="") as source:
-        return read_distance_matrix(source)
+            raw_bytes = archive.read(DISTANCE_MEMBER)
+    else:
+        raw_bytes = path.read_bytes()
+    digest = hashlib.sha256(raw_bytes).hexdigest()
+    source = io.StringIO(raw_bytes.decode("utf-8"))
+    return read_distance_matrix(source), digest
 
 
 def main() -> None:
@@ -76,11 +79,13 @@ def main() -> None:
     knowledge_path = PROJECT_ROOT / "results" / "comprehensive_fingerprint_results.json"
     knowledge_pairs = json.loads(knowledge_path.read_text())["all_pairs"]
     model_ids = load_model_ids(PROJECT_ROOT / "data" / "results")
-    distances = load_external_distances(args.single_token_artifact)
+    distances, distance_sha256 = load_external_distances(args.single_token_artifact)
     aligned = align_fingerprint_pairs(knowledge_pairs, model_ids, distances)
     summary = summarize_alignment(aligned)
     summary["source"] = {
         "single_token_dataset_doi": SOURCE_DOI,
+        "single_token_matrix_member": DISTANCE_MEMBER,
+        "single_token_matrix_sha256": distance_sha256,
         "ikp_fingerprint_results": str(knowledge_path.relative_to(PROJECT_ROOT)),
         "alignment": "exact served model identifier; non-thinking IKP runs only",
     }
