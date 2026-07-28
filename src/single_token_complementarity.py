@@ -10,8 +10,17 @@ onto non-reasoning endpoints.
 from __future__ import annotations
 
 import csv
+import hashlib
+import io
+import re
 
 from scipy.stats import spearmanr
+
+
+PINNED_SINGLE_TOKEN_MATRIX_SHA256 = (
+    "0eb6821716d6420c814285db73d4edacb6c7104b576079be2500cbcda21d76a5"
+)
+_SHA256_PATTERN = re.compile(r"[0-9a-f]{64}")
 
 
 def read_distance_matrix(source):
@@ -26,6 +35,23 @@ def read_distance_matrix(source):
             if model_a < model_b:
                 distances[(model_a, model_b)] = float(value)
     return distances
+
+
+def read_verified_distance_matrix(
+    raw_bytes: bytes,
+    expected_sha256: str = PINNED_SINGLE_TOKEN_MATRIX_SHA256,
+):
+    """Verify and parse the pinned external single-token distance matrix."""
+    if not _SHA256_PATTERN.fullmatch(expected_sha256):
+        raise ValueError("expected_sha256 must be a lowercase 64-character hex digest")
+    digest = hashlib.sha256(raw_bytes).hexdigest()
+    if digest != expected_sha256:
+        raise ValueError(
+            "single-token distance matrix SHA-256 mismatch: "
+            f"expected {expected_sha256}, got {digest}"
+        )
+    source = io.StringIO(raw_bytes.decode("utf-8"))
+    return read_distance_matrix(source), digest
 
 
 def _is_thinking_variant(name: str) -> bool:
@@ -68,6 +94,17 @@ def _correlation(rows, metric):
 
 def summarize_alignment(aligned, min_joint_wrong=10):
     """Return descriptive correlations for all, within-, and cross-vendor pairs."""
+    pair_ids = [(row["model_a"], row["model_b"]) for row in aligned]
+    if len(pair_ids) != len(set(pair_ids)):
+        raise ValueError("aligned model pairs must be unique")
+    models = {model for pair in pair_ids for model in pair}
+    expected_pairs = len(models) * (len(models) - 1) // 2
+    if len(pair_ids) != expected_pairs:
+        raise ValueError(
+            "aligned model pairs must form a complete matrix: "
+            f"expected {expected_pairs}, got {len(pair_ids)}"
+        )
+
     groups = {
         "all": aligned,
         "same_vendor": [
@@ -86,7 +123,6 @@ def summarize_alignment(aligned, min_joint_wrong=10):
             "jaccard": _correlation(rows, "jaccard"),
             "hss": _correlation(hss_rows, "hss"),
         }
-    models = {row[key] for row in aligned for key in ("model_a", "model_b")}
     return {
         "n_models": len(models),
         "n_pairs": len(aligned),
@@ -123,7 +159,7 @@ def render_latex_table(summary):
 {body}
         \\bottomrule
     \\end{{tabular}}
-    \\caption{{Descriptive rank correlation between single-token behavioral similarity ($-\\mathrm{{JSD}}$) and IKP knowledge-fingerprint similarity. HSS rows require at least ten probes on which both models are wrong. Pairwise observations share models and are therefore not independent; the correlations quantify overlap between signals rather than inferential significance.}}
+    \\caption{{Descriptive rank association between single-token behavioral similarity ($-\\mathrm{{JSD}}$) and IKP knowledge-fingerprint similarity. HSS rows require at least ten probes on which both models are wrong. Pairwise observations share models, so ordinary significance tests for unrelated pairs do not apply; the correlations quantify signal overlap only.}}
     \\label{{tab:single-token-complementarity}}
 \\end{{table}}
 """

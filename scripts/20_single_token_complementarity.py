@@ -4,7 +4,7 @@
 Download ``pamela-publish-data.zip`` from DOI 10.5281/zenodo.21278557,
 then run:
 
-    python scripts/20_single_token_complementarity.py \
+    python3 scripts/20_single_token_complementarity.py \
         --single-token-artifact /path/to/pamela-publish-data.zip
 
 The external dataset is read in place and is not copied into this repository.
@@ -14,7 +14,6 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import io
 import json
 import sys
 import zipfile
@@ -24,8 +23,9 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.single_token_complementarity import (
+    PINNED_SINGLE_TOKEN_MATRIX_SHA256,
     align_fingerprint_pairs,
-    read_distance_matrix,
+    read_verified_distance_matrix,
     render_latex_table,
     summarize_alignment,
 )
@@ -53,15 +53,16 @@ def load_model_ids(results_dir: Path) -> dict[str, str]:
 
 
 def load_external_distances(path: Path):
-    """Return (distances, sha256) so the exact source matrix can be pinned."""
+    """Return the exact, digest-verified source matrix and its SHA-256."""
     if path.suffix.lower() == ".zip":
         with zipfile.ZipFile(path) as archive:
             raw_bytes = archive.read(DISTANCE_MEMBER)
     else:
         raw_bytes = path.read_bytes()
-    digest = hashlib.sha256(raw_bytes).hexdigest()
-    source = io.StringIO(raw_bytes.decode("utf-8"))
-    return read_distance_matrix(source), digest
+    return read_verified_distance_matrix(
+        raw_bytes,
+        expected_sha256=PINNED_SINGLE_TOKEN_MATRIX_SHA256,
+    )
 
 
 def main() -> None:
@@ -77,7 +78,9 @@ def main() -> None:
     args = parser.parse_args()
 
     knowledge_path = PROJECT_ROOT / "results" / "comprehensive_fingerprint_results.json"
-    knowledge_pairs = json.loads(knowledge_path.read_text())["all_pairs"]
+    knowledge_bytes = knowledge_path.read_bytes()
+    knowledge_pairs = json.loads(knowledge_bytes)["all_pairs"]
+    knowledge_sha256 = hashlib.sha256(knowledge_bytes).hexdigest()
     model_ids = load_model_ids(PROJECT_ROOT / "data" / "results")
     distances, distance_sha256 = load_external_distances(args.single_token_artifact)
     aligned = align_fingerprint_pairs(knowledge_pairs, model_ids, distances)
@@ -87,6 +90,7 @@ def main() -> None:
         "single_token_matrix_member": DISTANCE_MEMBER,
         "single_token_matrix_sha256": distance_sha256,
         "ikp_fingerprint_results": str(knowledge_path.relative_to(PROJECT_ROOT)),
+        "ikp_fingerprint_results_sha256": knowledge_sha256,
         "alignment": "exact served model identifier; non-thinking IKP runs only",
     }
 
