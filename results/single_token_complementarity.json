@@ -1,0 +1,45 @@
+{
+  "n_models": 82,
+  "n_pairs": 3321,
+  "min_joint_wrong_for_hss": 10,
+  "correlations": {
+    "all": {
+      "jaccard": {
+        "n": 3321,
+        "spearman_rho": 0.282
+      },
+      "hss": {
+        "n": 2598,
+        "spearman_rho": 0.074
+      }
+    },
+    "same_vendor": {
+      "jaccard": {
+        "n": 276,
+        "spearman_rho": 0.374
+      },
+      "hss": {
+        "n": 219,
+        "spearman_rho": 0.261
+      }
+    },
+    "cross_vendor": {
+      "jaccard": {
+        "n": 3045,
+        "spearman_rho": 0.256
+      },
+      "hss": {
+        "n": 2379,
+        "spearman_rho": 0.039
+      }
+    }
+  },
+  "source": {
+    "single_token_dataset_doi": "10.5281/zenodo.21278557",
+    "single_token_matrix_member": "results/divergence-matrix.csv",
+    "single_token_matrix_sha256": "0eb6821716d6420c814285db73d4edacb6c7104b576079be2500cbcda21d76a5",
+    "ikp_fingerprint_results": "results/comprehensive_fingerprint_results.json",
+    "ikp_fingerprint_results_sha256": "2837a6f9bdc35b79adfc805bbe5ba4d342a732eb351fd3bd54049d23d433372d",
+    "alignment": "exact served model identifier; non-thinking IKP runs only"
+  }
+}

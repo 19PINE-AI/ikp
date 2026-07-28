@@ -42,6 +42,7 @@ already ships in `data/`.
 | `loo_cv_analysis.py` | Leave-one-out CV + writes Fig 7 (`paper/figures/fig7_loo_validation.pdf`). |
 | `17_adversarial_robustness.py` | Quantifies how cheaply a black-box operator can game its IKP estimate (sandbagging vs. contamination) across the full roster; writes `data/results/adversarial_ikp.json` + `paper/figures/adversarial_ikp.png`. Findings in `../ADVERSARIAL_IKP.md`. |
 | `18_v2_validation.py` | Validates IKP v2: reproduces the repo's own accuracy (0 diff), refits the paper's calibration, checks the refusal-interval behavior. Writes `data/results/ikp_v2_validation.json` + `paper/figures/ikp_v2_intervals.png`. |
+| `20_single_token_complementarity.py` | Joins IKP knowledge fingerprints to Bruckner's released single-token JSD matrix by exact model ID; writes `results/single_token_complementarity.json` and the appendix table. Requires the Zenodo artifact from DOI `10.5281/zenodo.21278557` and verifies the source matrix against its pinned SHA-256. |
 | `show_progress.py` | Quick text progress dump across `data/results/`. |
 
 ## legacy/
