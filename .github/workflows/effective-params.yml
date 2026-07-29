@@ -1,0 +1,19 @@
+name: Effective parameter checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  effective-params:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python scripts/19_effective_params.py
+      - run: python -m unittest discover -s tests -p 'test_*.py' -v

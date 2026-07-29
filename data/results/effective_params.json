@@ -1,0 +1,1340 @@
+{
+  "estimand": "N_eff = 10^((A - intercept)/slope), IKP-effective parameters (open-cohort-equivalent size); rho = N_eff/N_true (knowledge density)",
+  "calibration": {
+    "lambda": 0.0,
+    "slope": 0.15878383971801158,
+    "intercept": 0.24225587514729152,
+    "n": 93,
+    "r_squared": 0.9104703503493753,
+    "source": "evaluation_summary.json + all_models.json"
+  },
+  "cohort_n": 93,
+  "cross_validation": {
+    "loo": {
+      "median_fold": 1.4824888374366547,
+      "pi90_fold": 3.133645438032231,
+      "within_2x": 0.7204301075268817,
+      "within_3x": 0.8602150537634409
+    },
+    "lofo": {
+      "median_fold": 1.5559541594938013,
+      "pi90_fold": 3.5149604573833626,
+      "within_2x": 0.6989247311827957,
+      "within_3x": 0.8494623655913979
+    },
+    "family_bias": {
+      "command": {
+        "n": 3,
+        "gm_signed_fold": 0.7300258136330049,
+        "median_abs_fold": 1.911839989680092
+      },
+      "deepseek": {
+        "n": 8,
+        "gm_signed_fold": 1.114776474570393,
+        "median_abs_fold": 1.481290764880284
+      },
+      "deepseek-distill": {
+        "n": 2,
+        "gm_signed_fold": 0.9266185149993458,
+        "median_abs_fold": 1.8311480399661872
+      },
+      "ernie": {
+        "n": 1,
+        "gm_signed_fold": 0.23982312421123464,
+        "median_abs_fold": 4.169739691653781
+      },
+      "gemma": {
+        "n": 1,
+        "gm_signed_fold": 0.8759706620266482,
+        "median_abs_fold": 1.1415907442452435
+      },
+      "gemma2": {
+        "n": 2,
+        "gm_signed_fold": 0.802288734146092,
+        "median_abs_fold": 1.5017709143987013
+      },
+      "gemma3": {
+        "n": 4,
+        "gm_signed_fold": 0.7735293882402257,
+        "median_abs_fold": 1.191788091516933
+      },
+      "gemma3n": {
+        "n": 1,
+        "gm_signed_fold": 1.1558514052553965,
+        "median_abs_fold": 1.1558514052553965
+      },
+      "gemma4": {
+        "n": 2,
+        "gm_signed_fold": 0.8384672393240465,
+        "median_abs_fold": 1.1937750687915103
+      },
+      "glm": {
+        "n": 10,
+        "gm_signed_fold": 2.077429212768986,
+        "median_abs_fold": 1.9285756888732775
+      },
+      "gpt-oss": {
+        "n": 2,
+        "gm_signed_fold": 0.8484141863379037,
+        "median_abs_fold": 1.1796501320441448
+      },
+      "granite": {
+        "n": 1,
+        "gm_signed_fold": 1.1683005669203463,
+        "median_abs_fold": 1.1683005669203463
+      },
+      "jamba": {
+        "n": 1,
+        "gm_signed_fold": 0.3189852685872314,
+        "median_abs_fold": 3.1349410097492787
+      },
+      "kimi": {
+        "n": 4,
+        "gm_signed_fold": 0.949281853480858,
+        "median_abs_fold": 1.246534998754964
+      },
+      "llama": {
+        "n": 6,
+        "gm_signed_fold": 0.7103178382233212,
+        "median_abs_fold": 1.3038010546694934
+      },
+      "llama3": {
+        "n": 2,
+        "gm_signed_fold": 1.9043853995693183,
+        "median_abs_fold": 1.9212124448899819
+      },
+      "llama4": {
+        "n": 2,
+        "gm_signed_fold": 0.5085798125291073,
+        "median_abs_fold": 2.184064884003597
+      },
+      "mimo": {
+        "n": 2,
+        "gm_signed_fold": 1.1162309603560483,
+        "median_abs_fold": 1.116343485886485
+      },
+      "minimax": {
+        "n": 1,
+        "gm_signed_fold": 0.4878088001477198,
+        "median_abs_fold": 2.049983517511732
+      },
+      "mistral": {
+        "n": 6,
+        "gm_signed_fold": 1.4791524953390511,
+        "median_abs_fold": 1.4033926598029622
+      },
+      "mixtral": {
+        "n": 2,
+        "gm_signed_fold": 1.5071963140370714,
+        "median_abs_fold": 1.5077636639590257
+      },
+      "nemotron": {
+        "n": 6,
+        "gm_signed_fold": 0.8677165692401346,
+        "median_abs_fold": 1.575368491040207
+      },
+      "olmo": {
+        "n": 1,
+        "gm_signed_fold": 0.37755245106425805,
+        "median_abs_fold": 2.6486386121482326
+      },
+      "phi": {
+        "n": 2,
+        "gm_signed_fold": 0.7318709607126823,
+        "median_abs_fold": 1.5114642884491591
+      },
+      "qwen": {
+        "n": 3,
+        "gm_signed_fold": 0.2967838366372196,
+        "median_abs_fold": 4.303218076512415
+      },
+      "qwen2.5": {
+        "n": 3,
+        "gm_signed_fold": 0.6524863446034688,
+        "median_abs_fold": 1.7698354265649556
+      },
+      "qwen3": {
+        "n": 6,
+        "gm_signed_fold": 0.8836536615202052,
+        "median_abs_fold": 1.4148438483558632
+      },
+      "qwen3.5": {
+        "n": 5,
+        "gm_signed_fold": 1.7787362283556538,
+        "median_abs_fold": 2.053662467312865
+      },
+      "smollm": {
+        "n": 2,
+        "gm_signed_fold": 2.9673820706558027,
+        "median_abs_fold": 3.5811877025562646
+      },
+      "smollm2": {
+        "n": 1,
+        "gm_signed_fold": 1.3874966043885417,
+        "median_abs_fold": 1.3874966043885417
+      },
+      "step": {
+        "n": 1,
+        "gm_signed_fold": 2.2077337019133356,
+        "median_abs_fold": 2.2077337019133356
+      }
+    }
+  },
+  "density": {
+    "sd_log10_rho": 0.3052544334239582,
+    "family_effect": {
+      "eta_squared": 0.4473385479278789,
+      "omega_squared": 0.17833208292683023,
+      "permutation_p": 0.05779422057794221,
+      "permutations": 10000,
+      "seed": 5005
+    },
+    "ledger": [
+      {
+        "model": "deepseek-v4-flash",
+        "family": "deepseek",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 284.0,
+        "accuracy": 0.7477977044197497,
+        "n_eff_B": 1526.992070937281,
+        "rho": 5.376732644145355,
+        "log10_rho": 0.7305184418966618,
+        "outlier_2sigma": true
+      },
+      {
+        "model": "smollm2-360m",
+        "family": "smollm",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 0.362,
+        "accuracy": 0.2839794144903725,
+        "n_eff_B": 1.831341899546705,
+        "rho": 5.058955523609683,
+        "log10_rho": 0.7040608612753794,
+        "outlier_2sigma": true
+      },
+      {
+        "model": "deepseek-v4-flash-think",
+        "family": "deepseek",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 284.0,
+        "accuracy": 0.7295699331784374,
+        "n_eff_B": 1172.3050776169916,
+        "rho": 4.12783478034152,
+        "log10_rho": 0.6157223060072451,
+        "outlier_2sigma": true
+      },
+      {
+        "model": "glm-4.7-think",
+        "family": "glm",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 358.0,
+        "accuracy": 0.7231556012382313,
+        "n_eff_B": 1068.1789530869007,
+        "rho": 2.9837400924215105,
+        "log10_rho": 0.47476098993226024,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "glm-4.6-think",
+        "family": "glm",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 357.0,
+        "accuracy": 0.7216731401682547,
+        "n_eff_B": 1045.4605975374432,
+        "rho": 2.928461057527852,
+        "log10_rho": 0.46663945318446176,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "ministral-8b",
+        "family": "mistral",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 8.0,
+        "accuracy": 0.45945514209866317,
+        "n_eff_B": 23.32882008717771,
+        "rho": 2.916102510897214,
+        "log10_rho": 0.46480278683882886,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "glm-4.7-flash-think",
+        "family": "glm",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 30.0,
+        "accuracy": 0.5399956932730218,
+        "n_eff_B": 75.01130216038244,
+        "rho": 2.5003767386794147,
+        "log10_rho": 0.3980054499531448,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen3.5-35b-a3b-think",
+        "family": "qwen3.5",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 35.0,
+        "accuracy": 0.5480560631819358,
+        "n_eff_B": 84.31209240662449,
+        "rho": 2.4089169259035565,
+        "log10_rho": 0.38182182314331126,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "step-3.5-flash-think",
+        "family": "step",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 197.0,
+        "accuracy": 0.6602120640689685,
+        "n_eff_B": 428.7792837438321,
+        "rho": 2.1765445875321427,
+        "log10_rho": 0.3377675683097867,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "llama-3-8b",
+        "family": "llama3",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 8.03,
+        "accuracy": 0.438376957261627,
+        "n_eff_B": 17.18482458142593,
+        "rho": 2.1400777809994933,
+        "log10_rho": 0.33042955804311885,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen3.5-27b-think",
+        "family": "qwen3.5",
+        "arch": "dense",
+        "thinking": true,
+        "params_B": 27.0,
+        "accuracy": 0.5182301413973918,
+        "n_eff_B": 54.707905217754174,
+        "rho": 2.026218711768673,
+        "log10_rho": 0.30668632166971066,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen3.5-9b-think",
+        "family": "qwen3.5",
+        "arch": "dense",
+        "thinking": true,
+        "params_B": 9.0,
+        "accuracy": 0.4410787792978433,
+        "n_eff_B": 17.871492680674397,
+        "rho": 1.9857214089638218,
+        "log10_rho": 0.2979183181590416,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "ministral-3b",
+        "family": "mistral",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 3.0,
+        "accuracy": 0.36484716713048515,
+        "n_eff_B": 5.9164886400479935,
+        "rho": 1.9721628800159978,
+        "log10_rho": 0.2949427802659302,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "command-a",
+        "family": "command",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 111.0,
+        "accuracy": 0.6124698891016755,
+        "n_eff_B": 214.56544278038314,
+        "rho": 1.9330220070304787,
+        "log10_rho": 0.2862367984038735,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen3.5-122b-a10b-think",
+        "family": "qwen3.5",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 122.0,
+        "accuracy": 0.6129826881728565,
+        "n_eff_B": 216.1669620464792,
+        "rho": 1.7718603446432721,
+        "log10_rho": 0.24842948846470905,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "glm-5",
+        "family": "glm",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 744.0,
+        "accuracy": 0.7371897607601098,
+        "n_eff_B": 1309.2703429038286,
+        "rho": 1.759771966268587,
+        "log10_rho": 0.24545639496901772,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "glm-5-think",
+        "family": "glm",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 744.0,
+        "accuracy": 0.7351690918991735,
+        "n_eff_B": 1271.462103813679,
+        "rho": 1.7089544406097836,
+        "log10_rho": 0.2327304849234813,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen3-8b-think",
+        "family": "qwen3",
+        "arch": "dense",
+        "thinking": true,
+        "params_B": 8.0,
+        "accuracy": 0.42206391862177306,
+        "n_eff_B": 13.564622272428045,
+        "rho": 1.6955777840535056,
+        "log10_rho": 0.22931771768258372,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "deepseek-r1-distill-llama-70b-think",
+        "family": "deepseek-distill",
+        "arch": "dense",
+        "thinking": true,
+        "params_B": 70.0,
+        "accuracy": 0.5715341831733621,
+        "n_eff_B": 118.50918676299993,
+        "rho": 1.6929883823285705,
+        "log10_rho": 0.22865397789162514,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "nemotron-3-super-120b",
+        "family": "nemotron",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 120.0,
+        "accuracy": 0.6085750050796771,
+        "n_eff_B": 202.78242087396745,
+        "rho": 1.689853507283062,
+        "log10_rho": 0.22784905743251144,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "llama-3-70b",
+        "family": "llama3",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 70.6,
+        "accuracy": 0.5702782417780055,
+        "n_eff_B": 116.37032899104693,
+        "rho": 1.6483049432159624,
+        "log10_rho": 0.21703756106540864,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "llama-3.3-70b",
+        "family": "llama",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 70.6,
+        "accuracy": 0.568102231995373,
+        "n_eff_B": 112.75557788675086,
+        "rho": 1.5971045026451964,
+        "log10_rho": 0.20333333407041454,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "glm-5.1-think",
+        "family": "glm",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 754.0,
+        "accuracy": 0.7289430728091622,
+        "n_eff_B": 1161.6967138922803,
+        "rho": 1.5407118221383027,
+        "log10_rho": 0.18772141499424916,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "mixtral-8x22b",
+        "family": "mixtral",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 141.0,
+        "accuracy": 0.6129705475542201,
+        "n_eff_B": 216.12890796044684,
+        "rho": 1.5328291344712541,
+        "log10_rho": 0.18549374644470595,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "mistral-small-24b",
+        "family": "mistral",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 24.0,
+        "accuracy": 0.4887937940146064,
+        "n_eff_B": 35.69963642414975,
+        "rho": 1.4874848510062397,
+        "log10_rho": 0.17245255143729424,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "mixtral-8x7b",
+        "family": "mixtral",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 46.7,
+        "accuracy": 0.5330747889575614,
+        "n_eff_B": 67.84842149331972,
+        "rho": 1.4528569912916427,
+        "log10_rho": 0.16222286760185584,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "glm-4-32b",
+        "family": "glm",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 32.0,
+        "accuracy": 0.5062689042941333,
+        "n_eff_B": 45.99596851868964,
+        "rho": 1.4373740162090511,
+        "log10_rho": 0.15756978973526578,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "nemotron-3-ultra",
+        "family": "nemotron",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 550.0,
+        "accuracy": 0.7007162660761778,
+        "n_eff_B": 771.4788032319639,
+        "rho": 1.4026887331490252,
+        "log10_rho": 0.14696130860958181,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "deepseek-v4-pro-think",
+        "family": "deepseek",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 1600.0,
+        "accuracy": 0.7732881635740471,
+        "n_eff_B": 2209.8987845576357,
+        "rho": 1.3811867403485223,
+        "log10_rho": 0.14025240038903664,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "smollm2-1.7b",
+        "family": "smollm2",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 1.7,
+        "accuracy": 0.30071552575588434,
+        "n_eff_B": 2.33437856588968,
+        "rho": 1.373163862288047,
+        "log10_rho": 0.13772236552606634,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "glm-5.1",
+        "family": "glm",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 754.0,
+        "accuracy": 0.7207552755333735,
+        "n_eff_B": 1031.6373971180517,
+        "rho": 1.3682193595730128,
+        "log10_rho": 0.13615573116691743,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "smollm2-135m",
+        "family": "smollm",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 0.135,
+        "accuracy": 0.12495115228360168,
+        "n_eff_B": 0.18248622645960658,
+        "rho": 1.3517498256267153,
+        "log10_rho": 0.13089632222446254,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "kimi-k2.5-think",
+        "family": "kimi",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 1040.0,
+        "accuracy": 0.7420918996908663,
+        "n_eff_B": 1405.7314614617912,
+        "rho": 1.3516648667901838,
+        "log10_rho": 0.13086902552151114,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "glm-4.5-think",
+        "family": "glm",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 355.0,
+        "accuracy": 0.6677866908796538,
+        "n_eff_B": 478.5615588515626,
+        "rho": 1.3480607291593314,
+        "log10_rho": 0.12970945729181355,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen3-next-80b-a3b",
+        "family": "qwen3",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 80.0,
+        "accuracy": 0.5639248701915196,
+        "n_eff_B": 106.12789567294162,
+        "rho": 1.3265986959117702,
+        "log10_rho": 0.12273956603743631,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "glm-4.5-air-think",
+        "family": "glm",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 106.0,
+        "accuracy": 0.5827082837681729,
+        "n_eff_B": 139.3558010855383,
+        "rho": 1.3146773687314934,
+        "log10_rho": 0.11881918691623129,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "mistral-nemo-12b",
+        "family": "mistral",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 12.0,
+        "accuracy": 0.42800242866491217,
+        "n_eff_B": 14.784534996699666,
+        "rho": 1.2320445830583056,
+        "log10_rho": 0.09062642359616808,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "nemotron-70b",
+        "family": "nemotron",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 70.0,
+        "accuracy": 0.5491977328134239,
+        "n_eff_B": 85.71956422789869,
+        "rho": 1.2245652032556955,
+        "log10_rho": 0.08798191454055498,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "deepseek-r1-think",
+        "family": "deepseek",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 671.0,
+        "accuracy": 0.7026019969505517,
+        "n_eff_B": 792.8665323137072,
+        "rho": 1.1816192731947948,
+        "log10_rho": 0.07247756606649026,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "gemma-2-2b",
+        "family": "gemma2",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 2.6,
+        "accuracy": 0.3196026843402681,
+        "n_eff_B": 3.0698712290433736,
+        "rho": 1.1807197034782206,
+        "log10_rho": 0.07214681066962579,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen3-14b-think",
+        "family": "qwen3",
+        "arch": "dense",
+        "thinking": true,
+        "params_B": 14.0,
+        "accuracy": 0.4355244163813639,
+        "n_eff_B": 16.488462897673614,
+        "rho": 1.1777473498338296,
+        "log10_rho": 0.07105213566226544,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "granite-3.3-2b",
+        "family": "granite",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 2.0,
+        "accuracy": 0.3004519352636091,
+        "n_eff_B": 2.325472607699466,
+        "rho": 1.162736303849733,
+        "log10_rho": 0.0654812325546428,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "gemma-3n-e4b",
+        "family": "gemma3n",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 4.0,
+        "accuracy": 0.34761465661461477,
+        "n_eff_B": 4.608248834105549,
+        "rho": 1.1520622085263872,
+        "log10_rho": 0.061475930554470364,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "mimo-v2-flash",
+        "family": "mimo",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 309.0,
+        "accuracy": 0.6458901469261518,
+        "n_eff_B": 348.36636777975286,
+        "rho": 1.1273992484781645,
+        "log10_rho": 0.05207774098452851,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "mimo-v2-flash-think",
+        "family": "mimo",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 309.0,
+        "accuracy": 0.6439336361831798,
+        "n_eff_B": 338.6213757711036,
+        "rho": 1.0958620575116622,
+        "log10_rho": 0.03975589043319649,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "llama-3.1-8b",
+        "family": "llama",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 8.03,
+        "accuracy": 0.39180298223533433,
+        "n_eff_B": 8.746378298873168,
+        "rho": 1.0892127395856996,
+        "log10_rho": 0.03711271226709621,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "phi-4",
+        "family": "phi",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 14.7,
+        "accuracy": 0.4319771468017171,
+        "n_eff_B": 15.661737052137324,
+        "rho": 1.0654242892610426,
+        "log10_rho": 0.02752259349235905,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "kimi-k2.7-code",
+        "family": "kimi",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 1040.0,
+        "accuracy": 0.7235787991048067,
+        "n_eff_B": 1074.7544742398836,
+        "rho": 1.0334177636921957,
+        "log10_rho": 0.014275922476909866,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "deepseek-v3.2-think",
+        "family": "deepseek",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 671.0,
+        "accuracy": 0.6903130774069545,
+        "n_eff_B": 663.4467439535155,
+        "rho": 0.9887432845805,
+        "log10_rho": -0.004916453157515222,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "mistral-7b",
+        "family": "mistral",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 7.2,
+        "accuracy": 0.37619971124559415,
+        "n_eff_B": 6.975267757158092,
+        "rho": 0.9687871884941794,
+        "log10_rho": -0.013771613055623782,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "deepseek-v3",
+        "family": "deepseek",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 671.0,
+        "accuracy": 0.6880125844183548,
+        "n_eff_B": 641.6790508709655,
+        "rho": 0.9563026093457012,
+        "log10_rho": -0.019404659216048614,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "llama-3.2-3b",
+        "family": "llama",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 3.21,
+        "accuracy": 0.3182581319936415,
+        "n_eff_B": 3.010595045545555,
+        "rho": 0.9378800764939423,
+        "log10_rho": -0.027852689815573258,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "gemma-3-27b",
+        "family": "gemma3",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 27.0,
+        "accuracy": 0.46506642622408284,
+        "n_eff_B": 25.306489976965526,
+        "rho": 0.9372774065542787,
+        "log10_rho": -0.028131851689264537,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwq-32b-think",
+        "family": "qwen2.5",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 32.0,
+        "accuracy": 0.4746275580579264,
+        "n_eff_B": 29.070110257912937,
+        "rho": 0.9084409455597793,
+        "log10_rho": -0.041703299342310485,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen3.5-397b-a17b-think",
+        "family": "qwen3.5",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 397.0,
+        "accuracy": 0.6474298273907396,
+        "n_eff_B": 356.2319990505598,
+        "rho": 0.8973098212860449,
+        "log10_rho": -0.0470575787585571,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "gemma-3-4b",
+        "family": "gemma3",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 4.0,
+        "accuracy": 0.3301997089406739,
+        "n_eff_B": 3.5798006556958972,
+        "rho": 0.8949501639239743,
+        "log10_rho": -0.04820114807562538,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "gpt-oss-120b-think",
+        "family": "gpt-oss",
+        "arch": "dense",
+        "thinking": true,
+        "params_B": 120.0,
+        "accuracy": 0.5641110154555697,
+        "n_eff_B": 106.41476044871283,
+        "rho": 0.8867896704059403,
+        "log10_rho": -0.05217937432145109,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "gemma-3-270m",
+        "family": "gemma",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 0.268,
+        "accuracy": 0.142950177332093,
+        "n_eff_B": 0.23691121105946966,
+        "rho": 0.8839970561920509,
+        "log10_rho": -0.05354918123316763,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "gemma-4-31b",
+        "family": "gemma4",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 31.0,
+        "accuracy": 0.47017655374423634,
+        "n_eff_B": 27.253032360179997,
+        "rho": 0.8791300761348386,
+        "log10_rho": -0.05594686193629623,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "kimi-k2.6-think",
+        "family": "kimi",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 1040.0,
+        "accuracy": 0.7120654369554575,
+        "n_eff_B": 909.4935056818521,
+        "rho": 0.87451298623255,
+        "log10_rho": -0.058233737006045644,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "command-r7b",
+        "family": "command",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 7.0,
+        "accuracy": 0.3644565644610499,
+        "n_eff_B": 5.883070734365176,
+        "rho": 0.8404386763378823,
+        "log10_rho": -0.07549396991003324,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "mistral-large",
+        "family": "mistral",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 123.0,
+        "accuracy": 0.5619008312426172,
+        "n_eff_B": 103.05816814065471,
+        "rho": 0.8378712856963798,
+        "log10_rho": -0.07682269283186416,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "llama-4-maverick",
+        "family": "llama4",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 402.0,
+        "accuracy": 0.642747310297538,
+        "n_eff_B": 332.84577111528233,
+        "rho": 0.8279745550131401,
+        "log10_rho": -0.08198300957645466,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "gemma-3-12b",
+        "family": "gemma3",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 12.0,
+        "accuracy": 0.40045024447896466,
+        "n_eff_B": 9.914882962589715,
+        "rho": 0.8262402468824762,
+        "log10_rho": -0.08289365398148826,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "llama-3.1-70b",
+        "family": "llama",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 70.6,
+        "accuracy": 0.5222478882544337,
+        "n_eff_B": 57.99003003939489,
+        "rho": 0.8213885274701826,
+        "log10_rho": -0.0854513673347995,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "gpt-oss-20b-think",
+        "family": "gpt-oss",
+        "arch": "dense",
+        "thinking": true,
+        "params_B": 20.0,
+        "accuracy": 0.4349403974815957,
+        "n_eff_B": 16.349410422994676,
+        "rho": 0.8174705211497338,
+        "log10_rho": -0.08752789950295037,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "gemma-4-26b-a4b",
+        "family": "gemma4",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 26.0,
+        "accuracy": 0.45207035825086234,
+        "n_eff_B": 20.95966631634372,
+        "rho": 0.8061410121670662,
+        "log10_rho": -0.09358898369177089,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen3-32b-think",
+        "family": "qwen3",
+        "arch": "dense",
+        "thinking": true,
+        "params_B": 32.0,
+        "accuracy": 0.4656513675898899,
+        "n_eff_B": 25.522064225325366,
+        "rho": 0.7975645070414177,
+        "log10_rho": -0.0982341810994058,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "llama-3.2-1b",
+        "family": "llama",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 1.24,
+        "accuracy": 0.23557426877273405,
+        "n_eff_B": 0.9076535505232494,
+        "rho": 0.731978669776814,
+        "log10_rho": -0.1355015743148309,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen-2.5-0.5b",
+        "family": "qwen",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 0.494,
+        "accuracy": 0.16962463808404718,
+        "n_eff_B": 0.3488011452196835,
+        "rho": 0.7060751927523957,
+        "log10_rho": -0.15114904674060411,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "nemotron-3-nano-30b",
+        "family": "nemotron",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 30.0,
+        "accuracy": 0.4516318031088476,
+        "n_eff_B": 20.826793019518316,
+        "rho": 0.6942264339839439,
+        "log10_rho": -0.15849885376631398,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "kimi-k2",
+        "family": "kimi",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 1000.0,
+        "accuracy": 0.6922443970121994,
+        "n_eff_B": 682.2904099924651,
+        "rho": 0.6822904099924652,
+        "log10_rho": -0.16603073295081883,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen3-30b-a3b-think",
+        "family": "qwen3",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 30.0,
+        "accuracy": 0.44819830691502033,
+        "n_eff_B": 19.81521039001527,
+        "rho": 0.660507013000509,
+        "log10_rho": -0.1801225668590626,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "deepseek-v3.2",
+        "family": "deepseek",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 671.0,
+        "accuracy": 0.6590764404456377,
+        "n_eff_B": 421.77592289592434,
+        "rho": 0.6285781265214968,
+        "log10_rho": -0.20164073578470673,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen-2.5-7b",
+        "family": "qwen2.5",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 7.62,
+        "accuracy": 0.34414279408739695,
+        "n_eff_B": 4.381981932813118,
+        "rho": 0.5750632457759998,
+        "log10_rho": -0.24028438873466343,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "gemma-3-1b",
+        "family": "gemma3",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 1.0,
+        "accuracy": 0.20367796336627061,
+        "n_eff_B": 0.5715330140156961,
+        "rho": 0.5715330140156961,
+        "log10_rho": -0.2429586779708341,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen-2.5-72b",
+        "family": "qwen2.5",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 72.7,
+        "accuracy": 0.4974587745913939,
+        "n_eff_B": 40.479460474539124,
+        "rho": 0.5568013820431791,
+        "log10_rho": -0.2542996954287775,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "gemma-2-27b",
+        "family": "gemma2",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 27.0,
+        "accuracy": 0.4282615583326513,
+        "n_eff_B": 14.840195923661001,
+        "rho": 0.5496368860615186,
+        "log10_rho": -0.25992412952304333,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "phi-3-mini",
+        "family": "phi",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 3.8,
+        "accuracy": 0.2888280077493799,
+        "n_eff_B": 1.964740703113461,
+        "rho": 0.5170370271351213,
+        "log10_rho": -0.2864783541891358,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "deepseek-r1-distill-qwen-32b-think",
+        "family": "deepseek-distill",
+        "arch": "dense",
+        "thinking": true,
+        "params_B": 32.0,
+        "accuracy": 0.43466081494747727,
+        "n_eff_B": 16.28325865859408,
+        "rho": 0.508851833081065,
+        "log10_rho": -0.29340865664710364,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "minimax-m2.7-think",
+        "family": "minimax",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 230.0,
+        "accuracy": 0.5684531989075449,
+        "n_eff_B": 113.33091082637407,
+        "rho": 0.4927430905494525,
+        "log10_rho": -0.3073794568654334,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "nemotron-super-49b-think",
+        "family": "nemotron",
+        "arch": "dense",
+        "thinking": true,
+        "params_B": 49.0,
+        "accuracy": 0.4607484617888332,
+        "n_eff_B": 23.77047899788744,
+        "rho": 0.48511181628341715,
+        "log10_rho": -0.31415814676295933,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "nemotron-nano-9b-v2",
+        "family": "nemotron",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 9.0,
+        "accuracy": 0.3399089942025593,
+        "n_eff_B": 4.121038395173905,
+        "rho": 0.45789315501932276,
+        "log10_rho": -0.3392358486311938,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "olmo-3.1-32b",
+        "family": "olmo",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 32.0,
+        "accuracy": 0.4148666957648695,
+        "n_eff_B": 12.22026235705315,
+        "rho": 0.3818831986579109,
+        "log10_rho": -0.418069448436499,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen3-235b-a22b-think",
+        "family": "qwen3",
+        "arch": "moe",
+        "thinking": true,
+        "params_B": 235.0,
+        "accuracy": 0.547118545828504,
+        "n_eff_B": 83.17360105748007,
+        "rho": 0.35393021726587265,
+        "log10_rho": -0.45108235730708607,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "jamba-large",
+        "family": "jamba",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 398.0,
+        "accuracy": 0.5775221860453186,
+        "n_eff_B": 129.25986032022152,
+        "rho": 0.3247735183925164,
+        "log10_rho": -0.4884193897906839,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "llama-4-scout",
+        "family": "llama4",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 109.0,
+        "accuracy": 0.4879248209742171,
+        "n_eff_B": 35.252596800748805,
+        "rho": 0.3234183192729248,
+        "log10_rho": -0.4902353841395245,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen3.5-0.8b",
+        "family": "qwen",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 0.8,
+        "accuracy": 0.14106944909567162,
+        "n_eff_B": 0.23053720876691544,
+        "rho": 0.2881715109586443,
+        "log10_rho": -0.540348956363887,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "command-r-plus",
+        "family": "command",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 104.0,
+        "accuracy": 0.4660271166888999,
+        "n_eff_B": 25.66151048850358,
+        "rho": 0.24674529315868826,
+        "log10_rho": -0.6077511230542957,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "qwen3-0.6b",
+        "family": "qwen",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 0.596,
+        "accuracy": 0.10967071805841186,
+        "n_eff_B": 0.1462163372589322,
+        "rho": 0.24532942493109433,
+        "log10_rho": -0.610250359177189,
+        "outlier_2sigma": false
+      },
+      {
+        "model": "ernie-4.5-300b-a47b",
+        "family": "ernie",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 300.0,
+        "accuracy": 0.5383758901248453,
+        "n_eff_B": 73.26986558576421,
+        "rho": 0.2442328852858807,
+        "log10_rho": -0.6121958598971089,
+        "outlier_2sigma": true
+      },
+      {
+        "model": "hermes-4-405b",
+        "family": "llama",
+        "arch": "dense",
+        "thinking": false,
+        "params_B": 405.0,
+        "accuracy": 0.5220898311567072,
+        "n_eff_B": 57.8572664121893,
+        "rho": 0.1428574479313316,
+        "log10_rho": -0.84509711257099,
+        "outlier_2sigma": true
+      },
+      {
+        "model": "deepseek-v4-pro",
+        "family": "deepseek",
+        "arch": "moe",
+        "thinking": false,
+        "params_B": 1600.0,
+        "accuracy": 0.6006136881283892,
+        "n_eff_B": 180.67204625681447,
+        "rho": 0.11292002891050905,
+        "log10_rho": -0.9472290193342492,
+        "outlier_2sigma": true
+      }
+    ]
+  },
+  "moe_gamma": {
+    "n": 41,
+    "gamma_hat": 1.0,
+    "gamma_ci90": [
+      0.85975,
+      1.0
+    ],
+    "bootstrap": {
+      "B": 2000,
+      "seed": 5
+    },
+    "comparisons": {
+      "total (\u03b3=1)": {
+        "gamma": 1.0,
+        "r2": 0.6673584010604264,
+        "loo_median_fold": 1.5818739214162991
+      },
+      "geometric mean (\u03b3=0.5)": {
+        "gamma": 0.5,
+        "r2": 0.5882494409005407,
+        "loo_median_fold": 1.6747577901583353
+      },
+      "active (\u03b3=0)": {
+        "gamma": 0.0,
+        "r2": 0.4119776664573238,
+        "loo_median_fold": 2.177690005010512
+      }
+    }
+  }
+}

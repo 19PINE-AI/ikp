@@ -42,6 +42,7 @@ already ships in `data/`.
 | `loo_cv_analysis.py` | Leave-one-out CV + writes Fig 7 (`paper/figures/fig7_loo_validation.pdf`). |
 | `17_adversarial_robustness.py` | Quantifies how cheaply a black-box operator can game its IKP estimate (sandbagging vs. contamination) across the full roster; writes `data/results/adversarial_ikp.json` + `paper/figures/adversarial_ikp.png`. Findings in `../ADVERSARIAL_IKP.md`. |
 | `18_v2_validation.py` | Validates IKP v2: reproduces the repo's own accuracy (0 diff), refits the paper's calibration, checks the refusal-interval behavior. Writes `data/results/ikp_v2_validation.json` + `paper/figures/ikp_v2_intervals.png`. |
+| `19_effective_params.py` | Issue #5 accuracy/interpretability harness: leave-one-family-out CV (the honest band for new vendors), per-model knowledge-density ledger ρ = N_eff/N_true, and the continuous MoE exponent γ-fit with bootstrap CI. Deterministic, no API calls. Writes `data/results/effective_params.json`. Policy in `../PARAM_POLICY.md`. |
 | `show_progress.py` | Quick text progress dump across `data/results/`. |
 
 ## legacy/
