@@ -25,11 +25,11 @@ OUT = ROOT / "data" / "probes" / "final_probe_set_clean.json"
 
 
 def main():
-    probes = json.load(open(SRC))
-    clean_ids = set(json.load(open(MASK))["clean_ids"])
+    probes = json.load(open(SRC, encoding="utf-8"))
+    clean_ids = set(json.load(open(MASK, encoding="utf-8"))["clean_ids"])
     clean = [p for p in probes if p["id"] in clean_ids]
     clean.sort(key=lambda p: p["id"])
-    OUT.write_text(json.dumps(clean, indent=2, ensure_ascii=False) + "\n")
+    OUT.write_text(json.dumps(clean, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
 
     from collections import Counter
     by_tier = dict(sorted(Counter(p["tier"] for p in clean).items()))
