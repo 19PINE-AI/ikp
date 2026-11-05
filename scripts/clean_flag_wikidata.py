@@ -82,14 +82,29 @@ def type_collisions(qid, lbl):
     return len(coll), coll
 
 # 3) grounding heuristic
-COUNTRY_RE = re.compile(r"\bin\s+[A-Z][a-zA-Z.\-]+", )
-def grounded(q, label):
+COUNTRY_ALIAS = {
+    "czech republic": {"czechia", "czech"},
+    "united kingdom": {"uk", "britain", "england", "scotland", "wales"},
+    "united states": {"usa", "states", "american"},
+    "people's republic of china": {"china", "chinese"},
+}
+COUNTRY_RE = re.compile(r"\bin\s+([A-Z][a-zA-Z.\-]+(?:\s+[A-Z][a-zA-Z.\-]+)*)")
+def grounded(q, label, coll=None):
     body = q
     if label:  # strip the entity name so "in <place>" refers to a qualifier, not the name
         body = re.sub(re.escape(label), "", body, flags=re.IGNORECASE)
     if "," in body:  # comma qualifier e.g. "Putnam, Connecticut"
         return True
-    if COUNTRY_RE.search(body):  # "... in Connecticut ..."
+    m = COUNTRY_RE.search(body)
+    if m:  # "... in Connecticut ..."
+        place = m.group(1).lower().strip()
+        place_tokens = {w for w in re.findall(r"[a-z]+", place) if len(w) > 2} | COUNTRY_ALIAS.get(place, set())
+        # If colliding entities are already in that same country/place (e.g. multiple
+        # rivers named Bělá inside Czech Republic), country-level "in <Place>" does not disambiguate.
+        if coll and place_tokens:
+            same_place_coll = [c for c in coll if dwords(c.get("description", "")) & place_tokens]
+            if same_place_coll:
+                return False
         return True
     return False
 
@@ -97,11 +112,11 @@ out = []
 for x in wd:
     lbl = labels.get(x["wikidata_id"])
     n_type, coll = type_collisions(x["wikidata_id"], lbl) if lbl else (0, [])
-    g = grounded(x["question"], lbl or "")
+    g = grounded(x["question"], lbl or "", coll)
     ambiguous = (n_type >= 1) and (not g)   # >=1 OTHER same-type same-label entity, ungrounded
     out.append({"probe_id": x["id"], "tier": x["tier"], "wikidata_id": x["wikidata_id"],
                 "label": lbl, "same_type_collisions": n_type,
-                "collision_desc": [c["description"] for c in coll][:3],
+                "collision_desc": [c["description"] for c in coll][:10],
                 "grounded": g, "ambiguous": ambiguous, "question": x["question"]})
 json.dump(out, open(OUT, "w"), indent=2, ensure_ascii=False)
 flagged = [r for r in out if r["ambiguous"]]

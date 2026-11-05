@@ -43,7 +43,7 @@ import httpx
 
 # ── Constants ──────────────────────────────────────────────────
 PROJECT_ROOT = Path(__file__).parent.parent
-PROBE_FILE = PROJECT_ROOT / "data" / "probes" / "final_probe_set_v8.json"
+PROBE_FILE = PROJECT_ROOT / "data" / "probes" / "final_probe_set_clean.json"
 SYSTEM_MSG = "Answer factual questions directly and concisely. If you don't know, say 'I don't know'."
 JUDGE_MODEL = "google/gemini-3-flash-preview"
 HALLUCINATION_PENALTY = 0.0  # no penalty: wrong answers score the same as refusals (λ=0)
@@ -222,7 +222,7 @@ def make_judge_fn(api_key: str):
 
         if ';' in gold:
             gold_display = ' OR '.join(a.strip() for a in gold.split(';'))
-            co_note = "\nNOTE: Any of the listed names counts as CORRECT."
+            co_note = "\nNOTE: Any of the listed answers counts as CORRECT."
         else:
             gold_display = gold
             co_note = ""
@@ -453,13 +453,15 @@ def main():
                                help="Show calibration curve info and exit")
 
     args = parser.parse_args()
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
     # Info-only modes
     if args.show_calibration:
         display_calibration()
         return
 
-    probes = json.load(open(PROBE_FILE))
+    probes = json.load(open(PROBE_FILE, encoding="utf-8"))
 
     if args.inspect_probes:
         display_probes(probes)
@@ -599,7 +601,7 @@ def main():
             },
             "results": results,
         }
-        with open(args.output, "w") as f:
+        with open(args.output, "w", encoding="utf-8") as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
         print(f"  Results saved to {args.output}")
 

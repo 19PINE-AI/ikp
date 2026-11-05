@@ -87,12 +87,19 @@ def vendor_of(name: str) -> str:
             return v
     return "Other"
 
-def norm_answer(s: str) -> str:
+def norm_answer(s: str, question: str = "") -> str:
     if not s:
         return ""
-    s = s.strip().lower()
+    s = re.sub(r"<think>.*?</think>", "", s, flags=re.DOTALL | re.IGNORECASE).strip()
+    if not s:
+        return ""
+    if question and question.lower().startswith("in what year"):
+        years = re.findall(r"\b(?:1\d{3}|20\d{2})\b", s)
+        if len(set(years)) == 1:
+            return years[0]
+    s = s.lower()
     s = re.sub(r"[\s\.,;:!?\"'()\-]+", " ", s).strip()
-    return s[:80]
+    return s[:200]
 
 
 def load_all() -> dict:
@@ -101,7 +108,7 @@ def load_all() -> dict:
         if f.name in ("analysis.json", "evaluation_summary.json"):
             continue
         try:
-            d = json.load(open(f))
+            d = json.load(open(f, encoding="utf-8"))
         except Exception:
             continue
         if not isinstance(d, dict) or "results" not in d:
@@ -125,7 +132,7 @@ def build_fingerprints(data: dict):
             if r.get("correct"):
                 c.add(r["probe_id"])
             elif not r.get("refusal"):
-                a = norm_answer(r.get("model_response", ""))
+                a = norm_answer(r.get("model_response", ""), r.get("question", ""))
                 if a:
                     w[r["probe_id"]] = a
         correct[name] = c

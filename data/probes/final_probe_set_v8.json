@@ -211,7 +211,7 @@
   {
     "id": "IKP_T1_0025",
     "question": "Who founded the Ming Dynasty?",
-    "answer": "Zhu Yuanzhang",
+    "answer": "Zhu Yuanzhang; Hongwu Emperor",
     "tier": "T1",
     "source_type": "llm",
     "domain": "general"
@@ -5301,7 +5301,7 @@
   {
     "id": "IKP_T4_0612",
     "question": "What is the longest underwater tunnel in the world?",
-    "answer": "Channel Tunnel",
+    "answer": "Channel Tunnel; Seikan Tunnel",
     "tier": "T4",
     "source_type": "llm",
     "domain": "engineering"
@@ -9197,7 +9197,7 @@
   {
     "id": "IKP_T5_0987",
     "question": "In what year was Bethel University founded?",
-    "answer": "1947",
+    "answer": "1871; 1947",
     "tier": "T5",
     "source_type": "wikidata",
     "domain": "founding_year",
@@ -10601,7 +10601,7 @@
   {
     "id": "IKP_T6_1125",
     "question": "In what year was University of Kentucky College of Communications & Information Studies founded?",
-    "answer": "1976",
+    "answer": "1976; 1993",
     "tier": "T6",
     "source_type": "wikidata",
     "domain": "founding_year_uni2",
@@ -11140,7 +11140,7 @@
   {
     "id": "IKP_T6_1178",
     "question": "In what year was Mimasaka University founded?",
-    "answer": "1915",
+    "answer": "1915; 1967",
     "tier": "T6",
     "source_type": "wikidata",
     "domain": "founding_year",
@@ -11195,7 +11195,7 @@
   {
     "id": "IKP_T6_1183",
     "question": "In what year was Kyoto Women's University founded?",
-    "answer": "1899",
+    "answer": "1899; 1949",
     "tier": "T6",
     "source_type": "wikidata",
     "domain": "founding_year",
@@ -12448,7 +12448,7 @@
   {
     "id": "IKP_T7_1308",
     "question": "In what year was Nakamura Gakuen University founded?",
-    "answer": "1954",
+    "answer": "1954; 1965",
     "tier": "T7",
     "source_type": "wikidata",
     "domain": "founding_year",
@@ -12635,7 +12635,7 @@
   {
     "id": "IKP_T7_1336",
     "question": "In what year was Institute of Hotel Management founded?",
-    "answer": "1963",
+    "answer": "1954; 1963",
     "tier": "T7",
     "source_type": "wikidata",
     "domain": "founding_year",
@@ -12745,7 +12745,7 @@
   {
     "id": "IKP_T7_1353",
     "question": "In what year was the People's Republic of China museum China National Film Museum founded?",
-    "answer": "2007",
+    "answer": "2005; 2007",
     "tier": "T7",
     "source_type": "wikidata",
     "domain": "founding_year_museum2",
@@ -12943,7 +12943,7 @@
   {
     "id": "IKP_T7_1388",
     "question": "In what year was the German journal Angewandte Chemie first published?",
-    "answer": "1949",
+    "answer": "1887; 1949",
     "tier": "T7",
     "source_type": "wikidata",
     "domain": "journal",
@@ -12987,7 +12987,7 @@
   {
     "id": "IKP_T7_1397",
     "question": "In what year was Technical University of Civil Engineering of Bucharest founded?",
-    "answer": "1864",
+    "answer": "1864; 1948",
     "tier": "T7",
     "source_type": "wikidata",
     "domain": "founding_year",
@@ -13229,7 +13229,7 @@
   {
     "id": "IKP_T7_1509",
     "question": "Who founded the 2007 Morocco voluntary association Cinémathèthque de Tanger?",
-    "answer": "Latif Lahlou",
+    "answer": "Latif Lahlou; Yto Barrada; Cyriac Auriol",
     "tier": "T7",
     "source_type": "wikidata",
     "domain": "d4_founder_person",
@@ -13240,7 +13240,7 @@
   {
     "id": "IKP_T7_1510",
     "question": "In what city of United Kingdom is Petra Diamonds headquartered?",
-    "answer": "Jersey",
+    "answer": "London; Jersey",
     "tier": "T7",
     "source_type": "wikidata",
     "domain": "r3_hq_city",
@@ -13405,7 +13405,7 @@
   {
     "id": "IKP_T7_1525",
     "question": "In what country is the island South Island located?",
-    "answer": "Kenya",
+    "answer": "New Zealand; Kenya",
     "tier": "T7",
     "source_type": "wikidata",
     "domain": "r5_island_country",
@@ -13438,7 +13438,7 @@
   {
     "id": "IKP_T7_1528",
     "question": "Who directed the 1980 Hungary film A Pogány Madonna?",
-    "answer": "István Bujtor",
+    "answer": "István Bujtor; Gyula Mészáros",
     "tier": "T7",
     "source_type": "wikidata",
     "domain": "r7_director",
@@ -13460,7 +13460,7 @@
   {
     "id": "IKP_T7_1530",
     "question": "Who wrote the screenplay for the 1937 United Kingdom drama film The Great Barrier?",
-    "answer": "Emeric Pressburger",
+    "answer": "Emeric Pressburger; Michael Barringer",
     "tier": "T7",
     "source_type": "wikidata",
     "domain": "r3_screenwriter",
@@ -13515,7 +13515,7 @@
   {
     "id": "IKP_T7_1535",
     "question": "Who founded the 1960 Italy company MER MEC?",
-    "answer": "Vito Pertosa",
+    "answer": "Angelo Pertosa; Vito Pertosa",
     "tier": "T7",
     "source_type": "wikidata",
     "domain": "r6_founder",
@@ -13537,7 +13537,7 @@
   {
     "id": "IKP_T7_1537",
     "question": "In what city of United Kingdom is Manx Telecom headquartered?",
-    "answer": "Braddan",
+    "answer": "Braddan; Douglas",
     "tier": "T7",
     "source_type": "wikidata",
     "domain": "r3_hq_city",
@@ -13570,7 +13570,7 @@
   {
     "id": "IKP_T7_1540",
     "question": "Into what body of water does the Bělá in Czech Republic flow?",
-    "answer": "Želivka",
+    "answer": "Želivka; Divoká Orlice",
     "tier": "T7",
     "source_type": "wikidata",
     "domain": "r5_river_mouth",
